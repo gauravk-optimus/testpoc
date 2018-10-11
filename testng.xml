@@ -1,78 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="MonkeyMedia CC Gateway Suite">
-	<test name="PnP Tests">
+<suite guice-stage="DEVELOPMENT" name="VantivCreditCardPayments">
+	<test verbose="2" name="BEVantivCreditCardPayments">
 		<classes>
-			<!-- <class name="com.monkeymedia.pnp.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.RestDepositTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.RestDepositReturnTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.RestProfilePreauthTest"></class>
-			<class name="com.monkeymedia.pnp.testscripts.ParseFormResponseTest"></class> --> 
-			<class name="com.monkeymedia.firstdata.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.ParseFormResponseTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.RestDepositTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.RestDepositReturnTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.firstdata.testscripts.RestProfilePreauthTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.ParseFormResponseTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.RestDepositTest"></class>			
-			<class name="com.monkeymedia.usaepay.testscripts.RestDepositReturnTest"></class>			
-			<class name="com.monkeymedia.usaepay.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.usaepay.testscripts.RestProfilePreauthTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.ParseFormResponseTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.RestDepositTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.RestDepositReturnTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.beanstream.testscripts.RestProfilePreauthTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.ParseFormResponseTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.RestDepositTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.RestDepositReturnTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.vantivpay.testscripts.RestProfilePreauthTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.RestDepositTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.RestDepositReturnTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.RestProfilePreauthTest"></class>
-			<class name="com.monkeymedia.oldpnp.testscripts.ParseFormResponseTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.FormPreauthTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.FormCreateTokenTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.FormProfilePreauthTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.FormSaleTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.RestDepositTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.RestRefundTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.RestDepositReturnTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.RestCaptureTest"></class>
-			<class name="com.monkeymedia.chasepay.testscripts.RestProfilePreauthTest"></class>	
-			<class name="com.monkeymedia.chasepay.testscripts.ParseFormResponseTest"></class>
-		</classes>
+			<class name="com.uwp.testscripts.TestClass" />
+		</classes>		
 	</test>
 </suite>

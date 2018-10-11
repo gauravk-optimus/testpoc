@@ -1,6 +1,9 @@
 package com.uwp.utils;
 
+import io.appium.java_client.windows.WindowsDriver;
+
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
@@ -14,8 +17,7 @@ import com.uwp.utils.Constants;
  */
 public class BaseTest {
 	SoftAssert softAssert;
-
-
+	public static WindowsDriver<WebElement> driver = null;
 	
     /**
 	 * Configure Logger
