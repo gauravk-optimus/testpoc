@@ -40,7 +40,7 @@ public class TestClass extends BaseTest{
 		driver = null;
 	}
 
-	@Test
+	@Test(description = "To verify addition", priority = 1, enabled = true, alwaysRun = true)
 	public void Addition() {
 		log.info("Addition Test Case");
 		Keywords.clickByName(Locators.ONE_KEY);
@@ -50,7 +50,7 @@ public class TestClass extends BaseTest{
 		Assert.assertEquals(AssertionConstants.CalcResultEight, Keywords.getTextById(Locators.RESULT));
 	}
 
-	@Test
+	@Test(description = "To verify Combination", priority = 1, enabled = true, alwaysRun = true)
 	public void Combination() {
 		Keywords.clickByName(Locators.SEVEN_KEY);
 		Keywords.clickByName(Locators.MULTIPLY_KEY);
@@ -64,7 +64,7 @@ public class TestClass extends BaseTest{
 		Assert.assertEquals(AssertionConstants.CalcResultEight, Keywords.getTextById(Locators.RESULT));
 	}
 
-	@Test
+	@Test(description = "To verify division", priority = 1, enabled = true, alwaysRun = true)
 	public void Division() {
 		Keywords.clickByName(Locators.EIGHT_KEY);
 		Keywords.clickByName(Locators.EIGHT_KEY);
@@ -75,7 +75,7 @@ public class TestClass extends BaseTest{
 		Assert.assertEquals(AssertionConstants.CalcResultEight, Keywords.getTextById(Locators.RESULT));
 	}
 
-	@Test
+	@Test(description = "To verify multiplication", priority = 1, enabled = true, alwaysRun = true)
 	public void Multiplication() {
 		Keywords.clickByName(Locators.NINE_KEY);
 		Keywords.clickByName(Locators.MULTIPLY_KEY);
@@ -84,7 +84,7 @@ public class TestClass extends BaseTest{
 		Assert.assertEquals(AssertionConstants.CalcResultEightyOne, Keywords.getTextById(Locators.RESULT));
 	}
 
-	@Test
+	@Test(description = "To verify subtraction", priority = 1, enabled = true, alwaysRun = true)
 	public void Subtraction() {
 		Keywords.clickByName(Locators.NINE_KEY);
 		Keywords.clickByName(Locators.MINUS_KEY);
