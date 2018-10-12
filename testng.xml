@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="VantivCreditCardPayments">
-	<test verbose="2" name="BEVantivCreditCardPayments">
+<suite guice-stage="DEVELOPMENT" name="UWP POC project">
+	<test verbose="2" name="UWP POC project">
 		<classes>
 			<class name="com.uwp.testscripts.TestClass" />
 		</classes>		
