@@ -17,6 +17,8 @@ import com.uwp.utils.Constants;
  */
 public class BaseTest {
 	SoftAssert softAssert;
+	protected String onTestPass = "Execution Completed Test Passed";
+	protected String executing = "Executing Test Case - ";
 	public static WindowsDriver<WebElement> driver = null;
 	
     /**

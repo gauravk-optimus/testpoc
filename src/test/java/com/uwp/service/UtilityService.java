@@ -16,7 +16,8 @@ import org.slf4j.LoggerFactory;
 import com.uwp.utils.Constants;
 
 /**
- * This Class is used for reading files
+ * This Class contains all the methods to read config files, setting
+ * capabilities, app sessions and winAppDriver sessions
  * 
  * @author Optimus
  *
@@ -48,20 +49,33 @@ public class UtilityService {
 	 */
 	public static String getPropertyFromConfig(String propertyKey) {
 		String value = config.getProperty(propertyKey);
-		log.info(value + " of property " + propertyKey + " is read by Properties Reader");
 		return value;
 	}
 
+	/**
+	 * Setting desired desired capabilities for the app
+	 * 
+	 * @return capabilities
+	 */
 	public static DesiredCapabilities setAppCapabilities() {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("app", UtilityService.getPropertyFromConfig("appID") + "!App");
+		String appID = UtilityService.getPropertyFromConfig("appID");
+		capabilities.setCapability("app", appID + "!App");
 		return capabilities;
 	}
 
+	/**
+	 * Creating windows driver session
+	 * 
+	 * @param capabilities
+	 *            object returned by setAppCapabilities method
+	 * @return value corresponding to the key
+	 */
 	public static WindowsDriver<WebElement> createWindowsDriverSession(DesiredCapabilities capabilities) {
 		WindowsDriver<WebElement> appSession = null;
 		try {
-			appSession = new WindowsDriver<WebElement>(new URL(UtilityService.getPropertyFromConfig("WinAppDriverURL")), capabilities);
+			String WinAppDriverURL = UtilityService.getPropertyFromConfig("WinAppDriverURL");
+			appSession = new WindowsDriver<WebElement>(new URL(WinAppDriverURL), capabilities);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
