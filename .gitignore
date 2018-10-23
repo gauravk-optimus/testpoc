@@ -1,7 +1,10 @@
-/allure-results/
+/allure-results/*.json
+/allure-results/allure.properties
+/allure-report/
 /log/
 /target/
 /test-output/
 /*.project
 /*.classpath
 /.settings/
+/*.allure
