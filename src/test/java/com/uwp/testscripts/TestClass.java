@@ -1,7 +1,7 @@
 package com.uwp.testscripts;
 
+import io.qameta.allure.Description;
 import java.io.IOException;
-
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.uwp.screen.TestScreen;
 import com.uwp.service.UtilityService;
 import com.uwp.utils.AssertionConstants;
@@ -52,7 +51,8 @@ public class TestClass extends BaseTest {
 		log.info("Application is closed");
 		log.info("-------------------------------------------");
 	}
-
+	
+	@Description("This test case verify addition of two operands")
 	@Test(description = "To verify addition", priority = 1, enabled = true, alwaysRun = true)
 	public void Addition() {
 		log.info(executing + "Addition");
@@ -64,6 +64,7 @@ public class TestClass extends BaseTest {
 		log.info(onTestPass);
 	}
 
+	@Description("This test case verify Combination of three operators and four operands")
 	@Test(description = "To verify Combination", priority = 1, enabled = true, alwaysRun = true)
 	public void Combination() {
 		log.info(executing + "Combination");
@@ -80,6 +81,7 @@ public class TestClass extends BaseTest {
 		log.info(onTestPass);
 	}
 
+	@Description("This test case verify division of two operands")
 	@Test(description = "To verify division", priority = 1, enabled = true, alwaysRun = true)
 	public void Division() {
 		log.info(executing + "Division");
@@ -93,6 +95,7 @@ public class TestClass extends BaseTest {
 		log.info(onTestPass);
 	}
 
+	@Description("This test case verify multiplication of two operands")
 	@Test(description = "To verify multiplication", priority = 1, enabled = true, alwaysRun = true)
 	public void Multiplication() {
 		log.info(executing + "Multiplication");
@@ -103,7 +106,8 @@ public class TestClass extends BaseTest {
 		Assert.assertEquals(testScreen.getResult(), AssertionConstants.CalcResultEightyOne, ErrorConstants.ErrorInMultiplication);
 		log.info(onTestPass);
 	}
-
+	
+	@Description("This test case verify subtraction of two operands")
 	@Test(description = "To verify subtraction", priority = 1, enabled = true, alwaysRun = true)
 	public void Subtraction() {
 		log.info(executing + "Subtraction");
