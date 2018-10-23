@@ -59,7 +59,7 @@ public class TestClass extends BaseTest {
 	}
 	
 	@Severity(SeverityLevel.MINOR)
-	@Link(name="Google", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
+	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify addition of two operands")
 	@Test(description = "To verify addition", priority = 1, enabled = true, alwaysRun = true)
 	public void Addition() {
@@ -73,7 +73,7 @@ public class TestClass extends BaseTest {
 	}
 
 	@Severity(SeverityLevel.BLOCKER)
-	@Link(name="Google", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
+	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify Combination of three operators and four operands")
 	@Test(description = "To verify Combination", priority = 1, enabled = true, alwaysRun = true)
 	public void Combination() {
@@ -92,7 +92,7 @@ public class TestClass extends BaseTest {
 	}
 
 	@Severity(SeverityLevel.TRIVIAL)
-	@Link(name="Google", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
+	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify division of two operands")
 	@Test(description = "To verify division", priority = 1, enabled = true, alwaysRun = true)
 	public void Division() {
@@ -108,7 +108,7 @@ public class TestClass extends BaseTest {
 	}
 	
 	@Severity(SeverityLevel.NORMAL)
-	@Link(name="Google", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
+	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify multiplication of two operands")
 	@Test(description = "To verify multiplication", priority = 1, enabled = true, alwaysRun = true)
 	public void Multiplication() {
@@ -121,8 +121,8 @@ public class TestClass extends BaseTest {
 		log.info(onTestPass);
 	}
 	
-//	@Severity(SeverityLevel.BLOCKER) // when severity is not added, it will appear as normal in allure report
-	@Link(name="Google", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
+//	@Severity(SeverityLevel.BLOCKER) // when severity is not added, it will appear as 'Normal' in allure report
+	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify subtraction of two operands")
 	@Test(description = "To verify subtraction", priority = 1, enabled = true, alwaysRun = true)
 	public void Subtraction() {
