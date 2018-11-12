@@ -1,6 +1,7 @@
 package com.uwp.service;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -19,15 +20,16 @@ import com.uwp.utils.BaseTest;
  */
 public class Keywords extends BaseTest {
 	private static Keywords keywords;
-
-	private Keywords() {
+	public Keywords() throws IOException {
 	}
 
 	/**
 	 * Applying singleton design pattern for 'Keywords' class
+	 * 
+	 * @throws IOException
 	 *
 	 */
-	public static Keywords getInstance() {
+	public static Keywords getInstance() throws IOException {
 		if (keywords == null) {
 			keywords = new Keywords();
 		}

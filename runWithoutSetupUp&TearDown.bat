@@ -1,0 +1,1 @@
+mvn clean test -Dgroups=Combined allure:report

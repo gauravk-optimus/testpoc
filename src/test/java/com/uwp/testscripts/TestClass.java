@@ -4,19 +4,11 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-
 import java.io.IOException;
-
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.uwp.screen.TestScreen;
-import com.uwp.service.UtilityService;
 import com.uwp.utils.AssertionConstants;
 import com.uwp.utils.BaseTest;
 import com.uwp.utils.ErrorConstants;
@@ -30,39 +22,15 @@ import com.uwp.utils.ErrorConstants;
 public class TestClass extends BaseTest {
 
 	TestScreen testScreen = new TestScreen();
-	static DesiredCapabilities capabilities;
-	private static Logger log;
-
 	public TestClass() throws IOException {
 		log = LoggerFactory.getLogger(TestClass.class);
-	}
-
-	@BeforeMethod
-	public static void launchApp() {
-		try {
-			capabilities = UtilityService.setAppCapabilities();
-			driver = UtilityService.createWindowsDriverSession(capabilities);
-			log.info("Application is launched");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	@AfterMethod
-	public static void quitApp() {
-		if (driver != null) {
-			driver.quit();
-		}
-		driver = null;
-		log.info("Application is closed");
-		log.info("-------------------------------------------");
 	}
 	
 	@Severity(SeverityLevel.MINOR)
 	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify addition of two operands")
-	@Test(description = "To verify addition", priority = 1, enabled = true, alwaysRun = true)
-	public void Addition() {
+	@Test(description = "To verify addition", priority = 1, enabled = true, alwaysRun = true, groups = { "Smoke" })
+	public void Addition() throws IOException {
 		log.info(executing + "Addition");
 		testScreen.clickOne();
 		testScreen.clickPlus();
@@ -75,9 +43,9 @@ public class TestClass extends BaseTest {
 	@Severity(SeverityLevel.BLOCKER)
 	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify Combination of three operators and four operands")
-	@Test(description = "To verify Combination", priority = 1, enabled = true, alwaysRun = true)
-	public void Combination() {
-		log.info(executing + "Combination");
+	@Test(description = "To verify may operation", priority = 1, enabled = true, alwaysRun = true)
+	public void ManyOperation() throws IOException {
+		log.info(executing + "ManyOperation");
 		testScreen.clickSeven();
 		testScreen.clickMultiply();
 		testScreen.clickNine();
@@ -94,8 +62,8 @@ public class TestClass extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify division of two operands")
-	@Test(description = "To verify division", priority = 1, enabled = true, alwaysRun = true)
-	public void Division() {
+	@Test(description = "To verify division", priority = 1, enabled = true, alwaysRun = true, groups = { "Smoke" })
+	public void Division() throws IOException {
 		log.info(executing + "Division");
 		testScreen.clickEight();
 		testScreen.clickEight();
@@ -110,8 +78,8 @@ public class TestClass extends BaseTest {
 	@Severity(SeverityLevel.NORMAL)
 	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify multiplication of two operands")
-	@Test(description = "To verify multiplication", priority = 1, enabled = true, alwaysRun = true)
-	public void Multiplication() {
+	@Test(description = "To verify multiplication", priority = 1, enabled = true, alwaysRun = true, groups = { "Smoke" })
+	public void Multiplication() throws IOException {
 		log.info(executing + "Multiplication");
 		testScreen.clickNine();
 		testScreen.clickMultiply();
@@ -121,11 +89,11 @@ public class TestClass extends BaseTest {
 		log.info(onTestPass);
 	}
 	
-//	@Severity(SeverityLevel.BLOCKER) // when severity is not added, it will appear as 'Normal' in allure report
+//	@Severity(SeverityLevel.BLOCKER) // when severity is commented or not added, it will appear as 'Normal' in allure report
 	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
 	@Description("This test case verify subtraction of two operands")
-	@Test(description = "To verify subtraction", priority = 1, enabled = true, alwaysRun = true)
-	public void Subtraction() {
+	@Test(description = "To verify subtraction", priority = 1, enabled = true, alwaysRun = true, groups = { "Smoke", "Regression" })
+	public void Subtraction() throws IOException {
 		log.info(executing + "Subtraction");
 		testScreen.clickNine();
 		testScreen.clickMinus();
@@ -133,5 +101,16 @@ public class TestClass extends BaseTest {
 		testScreen.clickEquals();
 		Assert.assertEquals(testScreen.getResult(), AssertionConstants.CalcResultEight, ErrorConstants.ErrorInSubtraction);
 		log.info(onTestPass);
+	}
+
+	@Link(name="WinCalcApp", url="https://www.microsoft.com/en-us/p/windows-calculator/9wzdncrfhvn5#activetab=pivot:overviewtab")
+	@Description("This test case verify all the operations in this single test case")
+	@Test(groups = { "Combined" })
+	public void CombinedTestCaseforAll() throws IOException{
+		log.info(executing + "CombinedTestCaseforAll");
+		Addition();
+		ManyOperation();
+		Division();
+		Multiplication();
 	}
 }

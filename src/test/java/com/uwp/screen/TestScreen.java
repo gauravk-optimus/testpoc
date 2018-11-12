@@ -32,52 +32,52 @@ public class TestScreen {
 		log = LoggerFactory.getLogger(TestScreen.class);
 	}
 
-	public void clickOne() {
+	public void clickOne() throws IOException {
 		Keywords.getInstance().clickButton(ONE_KEY);
 		log.info("Clicked on One button");
 	}
 
-	public void clickSeven() {
+	public void clickSeven() throws IOException {
 		Keywords.getInstance().clickButton(SEVEN_KEY);
 		log.info("Clicked on Seven button");
 	}
 
-	public void clickEight() {
+	public void clickEight() throws IOException {
 		Keywords.getInstance().clickButton(EIGHT_KEY);
 		log.info("Clicked on Eight button");
 	}
 
-	public void clickNine() {
+	public void clickNine() throws IOException {
 		Keywords.getInstance().clickButton(NINE_KEY);
 		log.info("Clicked on Nine button");
 	}
 
-	public void clickPlus() {
+	public void clickPlus() throws IOException {
 		Keywords.getInstance().clickButton(PLUS_KEY);
 		log.info("Clicked on Plus Key");
 	}
 
-	public void clickMinus() {
+	public void clickMinus() throws IOException {
 		Keywords.getInstance().clickButton(MINUS_KEY);
 		log.info("Clicked on Minus Key");
 	}
 
-	public void clickMultiply() {
+	public void clickMultiply() throws IOException {
 		Keywords.getInstance().clickButton(MULTIPLY_KEY);
 		log.info("Clicked on Multiply Key");
 	}
 
-	public void clickDivide() {
+	public void clickDivide() throws IOException {
 		Keywords.getInstance().clickButton(DIVIDE_KEY);
 		log.info("Clicked on Divide Key");
 	}
 
-	public void clickEquals() {
+	public void clickEquals() throws IOException {
 		Keywords.getInstance().clickButton(EQUALS_KEY);
 		log.info("Clicked on Divide Key");
 	}
 
-	public String getResult() {
+	public String getResult() throws IOException {
 		String text = Keywords.getInstance().getTextById(RESULT);
 		String trimmedString = text.replace("Display is", "").trim();
 		log.info("Extracted the result");
