@@ -82,4 +82,8 @@ We would need following to setup in a Windows 10 machine:
 
 Note: You can find the Application Id of your application as follows:
 * From UWP project-> Move to 'AppX\vs.appxrecipe' file. Note the value of 'RegisteredUserModeAppID' key
-* From installed app-> Navigate to 'C:\Users\\<user>\AppData\Local\Packages' location. Here look for you application and copy the name of the installation folder
+* From installed app-> Navigate to 'C:\Users\youruser\AppData\Local\Packages\' location. Here look for you application and copy the name of the installation folder
+aa\<aa>\aa
+aa\\<aa>\aa
+aa\\\<aa>\aa
+aa\\<aa>\\aa
