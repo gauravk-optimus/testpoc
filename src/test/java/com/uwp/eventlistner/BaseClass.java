@@ -22,7 +22,7 @@ import com.uwp.service.UWPAppController;
  * @author Optimus
  *
  */
-public class BaseTest {
+public class BaseClass {
 	static SoftAssert softAssert;
 	protected String onTestPass = "Execution Completed Test Passed";
 	protected String executing = "Executing Test Case - ";
@@ -37,8 +37,8 @@ public class BaseTest {
 		PropertyConfigurator.configure(Constants.PATH_LOGGER);	
 	}
 	
-	public BaseTest() throws IOException {
-		log = LoggerFactory.getLogger(BaseTest.class);
+	public BaseClass() throws IOException {
+		log = LoggerFactory.getLogger(BaseClass.class);
 	}
 	
 	@BeforeMethod(alwaysRun = true)

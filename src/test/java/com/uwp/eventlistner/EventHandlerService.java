@@ -16,22 +16,22 @@ import org.openqa.selenium.TakesScreenshot;
  * @author Optimus
  *
  */
-public class EventHandlerService extends BaseTest {
-	private static EventHandlerService keywords;
+public class EventHandlerService extends BaseClass {
+	private static EventHandlerService eventHandlerService;
 	public EventHandlerService() throws IOException {
 	}
 
 	/**
-	 * Applying singleton design pattern for 'Keywords' class
+	 * Applying singleton design pattern for 'EventHandlerService' class
 	 * 
 	 * @throws IOException
 	 *
 	 */
 	public static EventHandlerService getInstance() throws IOException {
-		if (keywords == null) {
-			keywords = new EventHandlerService();
+		if (eventHandlerService == null) {
+			eventHandlerService = new EventHandlerService();
 		}
-		return keywords;
+		return eventHandlerService;
 	}
 
 	public void clickButton(By element) {

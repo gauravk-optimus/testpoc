@@ -7,7 +7,7 @@ package com.uwp.constants;
  * 
  */
 public class AssertionConstants {
-
+	
 	// Assertion Messages
 	public static String CalcResultEight = "8";
 	public static String CalcResultEightyOne = "81";

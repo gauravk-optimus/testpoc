@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.uwp.constants.AssertionConstants;
 import com.uwp.constants.ErrorConstants;
-import com.uwp.eventlistner.BaseTest;
+import com.uwp.eventlistner.BaseClass;
 import com.uwp.screen.TestScreen;
 
 /**
@@ -22,7 +22,7 @@ import com.uwp.screen.TestScreen;
  * @author Optimus
  *
  */
-public class TestClass extends BaseTest {
+public class TestClass extends BaseClass {
 
 	TestScreen testScreen = new TestScreen();
 	public TestClass() throws IOException {
