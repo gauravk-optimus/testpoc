@@ -1,4 +1,4 @@
-package com.uwp.service;
+package com.uwp.eventlistner;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,17 +10,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import com.uwp.utils.BaseTest;
-
 /**
  * This Class is used for reusable methods
  * 
  * @author Optimus
  *
  */
-public class Keywords extends BaseTest {
-	private static Keywords keywords;
-	public Keywords() throws IOException {
+public class EventHandlerService extends BaseTest {
+	private static EventHandlerService keywords;
+	public EventHandlerService() throws IOException {
 	}
 
 	/**
@@ -29,9 +27,9 @@ public class Keywords extends BaseTest {
 	 * @throws IOException
 	 *
 	 */
-	public static Keywords getInstance() throws IOException {
+	public static EventHandlerService getInstance() throws IOException {
 		if (keywords == null) {
-			keywords = new Keywords();
+			keywords = new EventHandlerService();
 		}
 		return keywords;
 	}
@@ -55,7 +53,7 @@ public class Keywords extends BaseTest {
 			String path = System.getProperty("user.dir") + "\\artifacts\\Screenshots\\";
 			System.out.println("Capture the Screen shot" + methodName);
 			scrFile = new File(path);
-			scrFile = ((TakesScreenshot) Keywords.driver).getScreenshotAs(OutputType.FILE);
+			scrFile = ((TakesScreenshot) EventHandlerService.driver).getScreenshotAs(OutputType.FILE);
 			path = path + methodName + "_" + new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(Calendar.getInstance().getTime()) + ".png";
 			FileUtils.copyFile(scrFile, new File(path));
 		} catch (Exception exception) {

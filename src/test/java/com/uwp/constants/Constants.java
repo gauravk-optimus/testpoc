@@ -1,4 +1,4 @@
-package com.uwp.utils;
+package com.uwp.constants;
 
 import java.nio.file.Paths;
 

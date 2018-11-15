@@ -5,7 +5,8 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.uwp.service.Keywords;
+
+import com.uwp.eventlistner.EventHandlerService;
 
 /**
  * This Class contains all the page objects and methods of 'TestScreen' screen
@@ -33,52 +34,52 @@ public class TestScreen {
 	}
 
 	public void clickOne() throws IOException {
-		Keywords.getInstance().clickButton(ONE_KEY);
+		EventHandlerService.getInstance().clickButton(ONE_KEY);
 		log.info("Clicked on One button");
 	}
 
 	public void clickSeven() throws IOException {
-		Keywords.getInstance().clickButton(SEVEN_KEY);
+		EventHandlerService.getInstance().clickButton(SEVEN_KEY);
 		log.info("Clicked on Seven button");
 	}
 
 	public void clickEight() throws IOException {
-		Keywords.getInstance().clickButton(EIGHT_KEY);
+		EventHandlerService.getInstance().clickButton(EIGHT_KEY);
 		log.info("Clicked on Eight button");
 	}
 
 	public void clickNine() throws IOException {
-		Keywords.getInstance().clickButton(NINE_KEY);
+		EventHandlerService.getInstance().clickButton(NINE_KEY);
 		log.info("Clicked on Nine button");
 	}
 
 	public void clickPlus() throws IOException {
-		Keywords.getInstance().clickButton(PLUS_KEY);
+		EventHandlerService.getInstance().clickButton(PLUS_KEY);
 		log.info("Clicked on Plus Key");
 	}
 
 	public void clickMinus() throws IOException {
-		Keywords.getInstance().clickButton(MINUS_KEY);
+		EventHandlerService.getInstance().clickButton(MINUS_KEY);
 		log.info("Clicked on Minus Key");
 	}
 
 	public void clickMultiply() throws IOException {
-		Keywords.getInstance().clickButton(MULTIPLY_KEY);
+		EventHandlerService.getInstance().clickButton(MULTIPLY_KEY);
 		log.info("Clicked on Multiply Key");
 	}
 
 	public void clickDivide() throws IOException {
-		Keywords.getInstance().clickButton(DIVIDE_KEY);
+		EventHandlerService.getInstance().clickButton(DIVIDE_KEY);
 		log.info("Clicked on Divide Key");
 	}
 
 	public void clickEquals() throws IOException {
-		Keywords.getInstance().clickButton(EQUALS_KEY);
+		EventHandlerService.getInstance().clickButton(EQUALS_KEY);
 		log.info("Clicked on Divide Key");
 	}
 
 	public String getResult() throws IOException {
-		String text = Keywords.getInstance().getTextById(RESULT);
+		String text = EventHandlerService.getInstance().getTextById(RESULT);
 		String trimmedString = text.replace("Display is", "").trim();
 		log.info("Extracted the result");
 		return trimmedString;

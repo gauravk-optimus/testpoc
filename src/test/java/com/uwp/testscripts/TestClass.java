@@ -4,14 +4,17 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+
 import java.io.IOException;
+
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.uwp.constants.AssertionConstants;
+import com.uwp.constants.ErrorConstants;
+import com.uwp.eventlistner.BaseTest;
 import com.uwp.screen.TestScreen;
-import com.uwp.utils.AssertionConstants;
-import com.uwp.utils.BaseTest;
-import com.uwp.utils.ErrorConstants;
 
 /**
  * This Class contains all the test cases for 'TestScreen' Screen

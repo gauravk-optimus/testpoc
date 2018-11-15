@@ -1,4 +1,4 @@
-package com.uwp.utils;
+package com.uwp.eventlistner;
 
 import java.io.IOException;
 
@@ -13,8 +13,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
-import com.uwp.service.UtilityService;
-import com.uwp.utils.Constants;
+import com.uwp.constants.Constants;
+import com.uwp.service.UWPAppController;
 
 /**
  * This Class is used for calling the listeners after test completions
@@ -44,8 +44,8 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public static void launchApp() {
 		try {
-			capabilities = UtilityService.setAppCapabilities();
-			driver = UtilityService.createWindowsDriverSession(capabilities);
+			capabilities = UWPAppController.setAppCapabilities();
+			driver = UWPAppController.createWindowsDriverSession(capabilities);
 			log.info("Application is launched");
 		} catch (Exception e) {
 			e.printStackTrace();
